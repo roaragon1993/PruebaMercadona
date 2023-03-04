@@ -2,6 +2,7 @@ package MercadonaAPI.serviceImplemet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import MercadonaAPI.model.Product;
 import MercadonaAPI.repository.ProductRepository;
 import MercadonaAPI.service.ProductService;
@@ -44,4 +45,34 @@ public class ProductServiceImpl implements ProductService{
 	              return null;
 	         }
 	 	}
+	 	
+	 	 /*
+		//Update a client from an id given
+		@Override
+		public Boolean updateProduct(Product product, Integer id) {
+			try {
+				Optional<Product> finalProduct = this.getProduct(id);
+				finalProduct.setproductCode(product.getproductCode());
+				finalProduct.setExpirationDate(product.getExpirationDate());
+				finalProduct.setProductName(product.getProductName());
+				finalProduct.setDescription(product.getDescription());
+				ProductRepository.saveProduct(finalProduct);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+
+		}
+
+		//Delete a client with their id
+		@Override
+		public Boolean deleteProduct(Integer id) {
+			try {
+				ProductRepository.delete(getProduct(id));
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		} */
+
 }

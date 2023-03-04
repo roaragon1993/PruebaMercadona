@@ -37,4 +37,14 @@ public class ProductController {
 		List<Product> products = productService.getProducts();
 		return products;
 	}
+	
+	/*@RequestMapping(value = "/updateProduct/{id}", method = RequestMethod.PATCH)
+	public Boolean updateProduct(@RequestBody Product p, @PathVariable Integer id) {
+		return productService.updateProduct(p, id);
+	}
+
+	@RequestMapping(value = "/deleteProduct/{id}", method = RequestMethod.DELETE)
+	public Boolean deleteProduct(@PathVariable Integer id) {
+		return productService.updateProduct(id);
+	} */
 }

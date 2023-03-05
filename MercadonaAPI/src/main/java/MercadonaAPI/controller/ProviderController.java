@@ -17,24 +17,24 @@ import MercadonaAPI.service.ProviderService;
 @RequestMapping(path = "/provider")
 public class ProviderController {
 	
-	@Autowired
-	private ProviderService provicerService;
-
-	@RequestMapping(value = "/saveProvider", method = RequestMethod.POST)
-	public Boolean saveProvider(@RequestBody Provider p) {
-		return provicerService.saveProvider(p);
-	}
-
-	@RequestMapping(value = "/getProvider/{id}", method = RequestMethod.GET)
-	public Optional<Provider> getProvider(@PathVariable Integer id) {
-		return provicerService.getProvider(id);
-	}
-
-	@RequestMapping(value = "/getProviders", method = RequestMethod.GET)
-	public List<Provider> getProviders() {
-		List<Provider> providers = provicerService.getProviders();
-		return providers;
-	}
+//	@Autowired
+//	private ProviderService provicerService;
+//
+//	@RequestMapping(value = "/saveProvider", method = RequestMethod.POST)
+//	public Boolean saveProvider(@RequestBody Provider p) {
+//		return provicerService.saveProvider(p);
+//	}
+//
+//	@RequestMapping(value = "/getProvider/{id}", method = RequestMethod.GET)
+//	public Optional<Provider> getProvider(@PathVariable Integer id) {
+//		return provicerService.getProvider(id);
+//	}
+//
+//	@RequestMapping(value = "/getProviders", method = RequestMethod.GET)
+//	public List<Provider> getProviders() {
+//		List<Provider> providers = provicerService.getProviders();
+//		return providers;
+//	}
 	
 	/*@RequestMapping(value = "/updateProvider/{id}", method = RequestMethod.PATCH)
 	public Boolean updateProvider(@RequestBody Provider p, @PathVariable Integer id) {

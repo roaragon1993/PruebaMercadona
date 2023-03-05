@@ -17,24 +17,24 @@ import MercadonaAPI.service.DestinationService;
 @RequestMapping(path = "/destination")
 public class DestinationController {
 
-	@Autowired
-	private DestinationService destinationService;
-	
-	@RequestMapping(value = "/saveDestination", method = RequestMethod.POST)
-	public Boolean saveDestination(@RequestBody Destination d) {
-		return destinationService.saveDestination(d);
-	}
-
-	@RequestMapping(value = "/getDestination/{id}", method = RequestMethod.GET)
-	public Optional<Destination> getDestination(@PathVariable Integer id) {
-		return destinationService.getDestination(id);
-	}
-
-	@RequestMapping(value = "/getProviders", method = RequestMethod.GET)
-	public List<Destination> getProviders() {
-		List<Destination> destinations = destinationService.getDestinations();
-		return destinations;
-	}
+//	@Autowired
+//	private DestinationService destinationService;
+//	
+//	@RequestMapping(value = "/saveDestination", method = RequestMethod.POST)
+//	public Boolean saveDestination(@RequestBody Destination d) {
+//		return destinationService.saveDestination(d);
+//	}
+//
+//	@RequestMapping(value = "/getDestination/{id}", method = RequestMethod.GET)
+//	public Optional<Destination> getDestination(@PathVariable Integer id) {
+//		return destinationService.getDestination(id);
+//	}
+//
+//	@RequestMapping(value = "/getProviders", method = RequestMethod.GET)
+//	public List<Destination> getProviders() {
+//		List<Destination> destinations = destinationService.getDestinations();
+//		return destinations;
+//	}
 	
 	/*@RequestMapping(value = "/updateDestination/{id}", method = RequestMethod.PATCH)
 	public Boolean updateProvider(@RequestBody Destination d, @PathVariable Integer id) {

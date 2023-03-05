@@ -15,18 +15,18 @@ import MercadonaAPI.service.FinalProductService;
 @RestController
 @RequestMapping(path = "/finalproduct")
 public class FinalProductController {
-
-	@Autowired
-	private FinalProductService finalProductService;
-	
-	@RequestMapping(value = "/getFinalProduct/{id}", method = RequestMethod.GET)
-	public Optional<FinalProduct> getDestination(@PathVariable Integer id) {
-		return finalProductService.getFinalProduct(id);
-	}
-
-	@RequestMapping(value = "/getFinalProducts", method = RequestMethod.GET)
-	public List<FinalProduct> getProviders() {
-		List<FinalProduct> destinations = finalProductService.getFinalProducts();
-		return destinations;
-	}
+//
+//	@Autowired
+//	private FinalProductService finalProductService;
+//	
+//	@RequestMapping(value = "/getFinalProduct/{id}", method = RequestMethod.GET)
+//	public Optional<FinalProduct> getDestination(@PathVariable Integer id) {
+//		return finalProductService.getFinalProduct(id);
+//	}
+//
+//	@RequestMapping(value = "/getFinalProducts", method = RequestMethod.GET)
+//	public List<FinalProduct> getProviders() {
+//		List<FinalProduct> destinations = finalProductService.getFinalProducts();
+//		return destinations;
+//	}
 }

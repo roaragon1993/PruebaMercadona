@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "5b60474c-4998-4aa1-bdd9-670c8b4a016f",
+		"name": "Destination",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetDestinations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/destination/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"destination",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDestination/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/destination/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"destination",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDestinationByCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/destination/code/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"destination",
+						"code",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDestination/{id}",
+			"request": {
+				"method": "PATCH",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AddDestination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destinationCode\": \"9\",\r\n    \"destinationName\": \"Oficinas Mercadona\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/destination/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"destination",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDestination",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

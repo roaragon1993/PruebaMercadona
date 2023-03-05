@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "79ef6222-aea4-4975-8dc7-361ea9d1d227",
+		"name": "FinalProduct",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetFinalProducts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetFinalProduct/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/EAN/1005051123459",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EAN",
+						"1005051123459"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

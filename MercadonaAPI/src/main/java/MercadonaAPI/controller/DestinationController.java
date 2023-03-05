@@ -11,38 +11,54 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import MercadonaAPI.model.Destination;
+import MercadonaAPI.model.Product;
 import MercadonaAPI.service.DestinationService;
 
 @RestController
 @RequestMapping(path = "/destination")
 public class DestinationController {
 
-//	@Autowired
-//	private DestinationService destinationService;
-//	
-//	@RequestMapping(value = "/saveDestination", method = RequestMethod.POST)
-//	public Boolean saveDestination(@RequestBody Destination d) {
-//		return destinationService.saveDestination(d);
-//	}
-//
-//	@RequestMapping(value = "/getDestination/{id}", method = RequestMethod.GET)
-//	public Optional<Destination> getDestination(@PathVariable Integer id) {
-//		return destinationService.getDestination(id);
-//	}
-//
-//	@RequestMapping(value = "/getProviders", method = RequestMethod.GET)
-//	public List<Destination> getProviders() {
-//		List<Destination> destinations = destinationService.getDestinations();
-//		return destinations;
-//	}
+	@Autowired
+	private DestinationService destinationService;
 	
-	/*@RequestMapping(value = "/updateDestination/{id}", method = RequestMethod.PATCH)
-	public Boolean updateProvider(@RequestBody Destination d, @PathVariable Integer id) {
-		return productService.updateProvider(d, id);
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String saveDestination(@RequestBody Destination d) {
+		Integer id =  destinationService.saveDestination(d);
+		return "El destino se ha creado correctamente con el ID: " + id;
 	}
 
-	@RequestMapping(value = "/deleteProvider/{id}", method = RequestMethod.DELETE)
-	public Boolean deleteProvider(@PathVariable Integer id) {
-		return productService.updateProduct(id);
-	} */
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public Optional<Destination> getDestination(@PathVariable Integer id) {
+		return destinationService.getDestination(id);
+	}
+	
+	@RequestMapping(value = "/code/{code}", method = RequestMethod.GET)
+	public Optional<Destination> getDestinationByCode(@PathVariable String code) {
+		return destinationService.getDestinationByCode(code);
+	}
+
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	public List<Destination> getDestinations() {
+		List<Destination> destinations = destinationService.getDestinations();
+		return destinations;
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.PATCH)
+	public String updateDestination(@RequestBody Destination d, @PathVariable Integer id) {
+		if(destinationService.updateDestination(d, id)) {
+			return "El destino con el ID: " + id + " se ha actualizado correctamente";
+		} else {
+			return "Ha ocurrido un error";
+		}
+		
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public String deleteDestination(@PathVariable Integer id) {
+		if(destinationService.deleteDestination(id)) {
+			return "El destino con el ID: " + id + " se ha borrado correctamente";
+		} else {
+			return "Ha ocurrido un error";
+		}
+	}
 }

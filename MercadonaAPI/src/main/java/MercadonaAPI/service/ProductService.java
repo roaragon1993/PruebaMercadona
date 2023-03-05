@@ -6,7 +6,10 @@ import java.util.Optional;
 import MercadonaAPI.model.Product;
 
 public interface ProductService {
-	 public Boolean saveProduct(Product product);
+	 public Integer saveProduct(Product product);
 	 public Optional<Product> getProduct(Integer id);
+	 public Optional<Product> getProductByCode(String productCode);
 	 public List<Product> getProducts();
+	 public Boolean updateProduct(Product p, Integer id);
+	 public Boolean deleteProduct(Integer id);
 }
